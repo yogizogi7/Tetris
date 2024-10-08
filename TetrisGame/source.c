@@ -318,6 +318,8 @@ void DrawBlock() {//블록 그리기
 void DrawRecord() {
 	Position(70,1);
 	printf("점수 : %d",record);
+	Position(50, 20);
+	printf("← → - 좌우키   ↓ - 빠르게 떨어지기   SPACE  - 블록 회전하기");
 }
 void InputKey(){//키 입력받기
 	if (_kbhit()) {

@@ -1,1 +1,2 @@
 C:\Users\조민기\Desktop\git\Tetris\TetrisGame\x64\Debug\TetrisGame.exe
+C:\Users\Administrator\Desktop\Tetris\TetrisGame\x64\Debug\TetrisGame.exe
