@@ -14,6 +14,7 @@ int blockForm;
 int blockRotation = 0;
 int key;
 int record = 0;
+int gameover = 0;
 int block[7][4][4][4] = {//7종류
 	{ // T모양 
 		{
@@ -357,13 +358,24 @@ void PlayBgm() {
 	PlaySound(TEXT("BGM.wav"), NULL, SND_ASYNC | SND_FILENAME);
 
 }
+void CheckGameOver() {
+	for (int i = 1; i < 11;i++) {
+		if (space[1][i] == 2) {
+			Position(70, 2);
+			printf("Game Over");
+			gameover = 1;
+			return;
+		}
+	
+	}
+}
 int main()
 {
 	PlayBgm();
 	InvisibleCursor();
 	dropStart = clock();
 	BlockShape();
-	while(1){
+	while(gameover==0){
 		DrawRecord();
 		DrawMap();
 		DrawBlock();
@@ -371,6 +383,8 @@ int main()
 		BlockToGround();
 		DestroyBlock();
 		InputKey();
+		CheckGameOver();
+		
 	}
 	
 	return 0;
